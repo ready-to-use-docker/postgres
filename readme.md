@@ -21,3 +21,13 @@ After that, to start use the command:
 ```shell
 $ make up
 ```
+
+Also you can start with detach mode:
+
+```shell
+$ make up args=-d
+
+# or use a short command
+
+$ make upd
+```

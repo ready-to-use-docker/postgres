@@ -6,8 +6,18 @@ ifneq ($(COMPOSE_EXTRA),)
 	compose := $(compose) -f $(COMPOSE_EXTRA)
 endif
 
+# Basic commands
+cp:
+	$(compose) cp $(args)
+
+create:
+	$(compose) create $(args)
+
+down:
+	$(compose) down $(args)
+
 up:
-	$(compose) up -d $(args)
+	$(compose) up $(args)
 
 logs:
 	$(compose) logs -f $(args)
@@ -26,6 +36,10 @@ stop:
 
 top:
 	$(compose) top $(args)
+
+# Advanced commands
+upd:
+	$(compose) up -d $(args)
 
 generate_settings:
 	cp configs/settings.env.example configs/settings.env
