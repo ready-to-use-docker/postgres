@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:${IMAGE_VERSION}
+
+    cpu_count: ${CPU_COUNT}
+    cpu_shares: ${CPU_SHARES}
+    cpu_period: ${CPU_PERIOD}
+    cpu_quota: ${CPU_QUOTA}
+    cpuset: ${CPUSET}
+
+    cgroup: ${CGROUP} 
+    
+    deploy:
+      mode: ${DEPLOY_MODE}
+      replicas: ${DEPLOY_REPLICAS}
+      endpoint_mode: ${DEPLOY_ENDPOINT_MODE}
+      restart_policy:
+        condition: ${DEPLOY_RESTART_POLICY_CONDITION}
+        delay: ${DEPLOY_RESTART_POLICY_DELAY}
+        max_attempts: ${DEPLOY_RESTART_POLICY_MAX_ATTEMPTS}
+        window: ${DEPLOY_RESTART_POLICY_WINDOW}
+
+    dns: ${DNS}
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    healthcheck:
+      test: ${HEALTHCHECK_TEST}
+      interval: ${HEALTHCHECK_INTERVAL}
+      timeout: ${HEALTHCHECK_TIMEOUT}
+      retries: ${HEALTHCHECK_RETRIES}
+
+    command: ${COMMAND}
