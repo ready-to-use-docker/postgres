@@ -2,9 +2,10 @@
 
 ## Requirements:
 
-* make
-* docker
-* docker-compose
+- jq
+- make
+- docker
+- docker-compose
 
 ## How to use 
 
