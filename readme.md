@@ -32,3 +32,7 @@ $ make up args=-d
 
 $ make upd
 ```
+
+## License
+
+See [license.md](https://github.com/ready-to-use-docker/postgres/blob/master/license.md).
